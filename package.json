@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/Thoth1111/Leaderboard#readme",
   "devDependencies": {
+    "@babel/core": "^7.20.12",
     "babel-eslint": "^10.1.0",
+    "babel-loader": "^9.1.2",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.27.5",
