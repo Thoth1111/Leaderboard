@@ -1,9 +1,8 @@
 const content = document.getElementById('content');
 
-const head = `<h1>Leaderboard</h1>`
+const head = '<h1>Leaderboard</h1>';
 
-const page = 
-`<section class="column">        
+const page = `<section class="column">        
     <div>
         <h2>Recent Scores</h2>
         <button type="button">Refresh</button>
@@ -16,10 +15,10 @@ const page =
         <button type="submit">Submit</button>
     </div>
 </section>
-`
+`;
 const renderPage = () => {
-    content.insertAdjacentHTML('beforeend', head);
-    content.insertAdjacentHTML('beforeend', page);
+  content.insertAdjacentHTML('beforeend', head);
+  content.insertAdjacentHTML('beforeend', page);
 };
 
-export default renderPage
+export default renderPage;
