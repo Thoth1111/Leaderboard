@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Thoth1111/Leaderboard/issues"
   },
-  "homepage": "https://github.com/Thoth1111/Leaderboard#readme"
+  "homepage": "https://github.com/Thoth1111/Leaderboard#readme",
+  "devDependencies": {
+    "hint": "^7.1.3"
+  }
 }
