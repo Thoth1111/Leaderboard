@@ -1,7 +1,5 @@
 const content = document.getElementById('content');
 
-const head = '<h1>Leaderboard</h1>';
-
 const page = `<section class="column">        
     <div>
         <h2>Recent Scores</h2>
@@ -17,7 +15,6 @@ const page = `<section class="column">
 </section>
 `;
 const renderPage = () => {
-  content.insertAdjacentHTML('beforeend', head);
   content.insertAdjacentHTML('beforeend', page);
 };
 
