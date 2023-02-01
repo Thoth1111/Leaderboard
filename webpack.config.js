@@ -1,3 +1,4 @@
+/* eslint-disable */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -9,7 +10,6 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Output Management',
       template: './src/index.html',
     }),
   ],
@@ -17,9 +17,6 @@ module.exports = {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
   },
-//   optimization: {
-//     runtimeChunk: 'single',
-//   },
   module: {
     rules: [
       {
