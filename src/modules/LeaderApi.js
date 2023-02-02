@@ -7,18 +7,13 @@ export const saveScore = async () => {
         method: 'POST',
         body: JSON.stringify(playerData),
         headers: {
-            'Content-type': 'application/json; charset=UTF-8',
+            'Content-type': 'application/json;',
         },        
     })
     return saver;
 }
 
 export const retrieveScore = async () => {
-    const retriever = await fetch(scoresite, {
-        method: 'GET',
-        headers: {
-            'Content-type': 'application/json; charset=UTF-8',
-        },        
-    })
-    return retriever;
+    const response = await fetch(scoresite);
+    return response.json();
 }
