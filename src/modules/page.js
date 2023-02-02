@@ -3,7 +3,7 @@ const content = document.getElementById('content');
 const page = `<section class="column">        
     <div>
         <h2>Recent Scores</h2>
-        <button type="button">Refresh</button>
+        <button type="button" id="refresher">Refresh</button>
         <div class="scores-display"></div>
     </div>
     <div class="score-form">
