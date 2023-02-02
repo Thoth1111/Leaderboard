@@ -8,9 +8,11 @@ const page = `<section class="column">
     </div>
     <div class="score-form">
         <h2>Add your score</h2>
+        <form id="input-area" action="post">
         <input type="text" required placeholder="Your name"/>
         <input type="number" required placeholder="Your score"/>
         <button type="submit">Submit</button>
+        </form>
     </div>
 </section>
 `;
