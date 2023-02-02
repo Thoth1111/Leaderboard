@@ -9,7 +9,8 @@ export const newSave = () => {
     return playerData;
 }
 
-export const display = async () => {
+export const displayScores = async () => {
+    // scoreCard.innerHTML = '';
     const sought = await retrieveScore();
     const scoresData = sought.result.sort((a, b) => a.score - b.score);
     let cardData = '';
