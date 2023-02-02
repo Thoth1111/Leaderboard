@@ -1,3 +1,24 @@
 const APIurl = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/';
 const gameID = 'D4oo8fZXNfgmwr94xZgZ';
-const scoresite = `${APIurl}games/${gameID}/scores`
+const scoresite = `${APIurl}games/${gameID}/scores`;
+
+export const saveScore = async () => {
+    const saver = await fetch(scoresite, {
+        method: 'POST',
+        body: JSON.stringify(playerData),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },        
+    })
+    return saver;
+}
+
+export const retrieveScore = async () => {
+    const retriever = await fetch(scoresite, {
+        method: 'GET',
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },        
+    })
+    return retriever;
+}
