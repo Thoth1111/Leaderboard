@@ -2,7 +2,7 @@ import { retrieveScore } from "./LeaderApi";
 
 const user = document.querySelector('#player-id');
 const score = document.querySelector('#score-input');
-const scoreCard = document.querySelector('.scores-display');
+export const scoreCard = document.querySelector('.scores-display');
 
 export const newSave = () => {
     const playerData = {player: user.value, score: score.value};

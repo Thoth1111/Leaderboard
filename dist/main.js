@@ -116,7 +116,17 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_page_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/page.js */ \"./src/modules/page.js\");\n\n\n\n(0,_modules_page_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n\n//# sourceURL=webpack://leaderboard/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_page_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/page.js */ \"./src/modules/page.js\");\n/* harmony import */ var _modules_pagefunctions_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/pagefunctions.js */ \"./src/modules/pagefunctions.js\");\n/* harmony import */ var _modules_LeaderApi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/LeaderApi */ \"./src/modules/LeaderApi.js\");\n\r\n\r\n\r\n\r\n\r\n(0,_modules_page_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\r\nconst refreshBtn = document.querySelector('#refresher');\r\nconst inputArea = document.querySelector('#input-area');\r\n\r\nrefreshBtn.onclick = () => {\r\n    _modules_pagefunctions_js__WEBPACK_IMPORTED_MODULE_2__.scoreCard.innerHTML = '';\r\n    (0,_modules_pagefunctions_js__WEBPACK_IMPORTED_MODULE_2__.displayScores)();\r\n}\r\n\r\ninputArea.onsubmit = (e) => {\r\n    e.preventdefault();\r\n    (0,_modules_LeaderApi__WEBPACK_IMPORTED_MODULE_3__.saveScore)();\r\n}\r\n\r\n\n\n//# sourceURL=webpack://leaderboard/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/LeaderApi.js":
+/*!**********************************!*\
+  !*** ./src/modules/LeaderApi.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"retrieveScore\": () => (/* binding */ retrieveScore),\n/* harmony export */   \"saveScore\": () => (/* binding */ saveScore)\n/* harmony export */ });\n/* harmony import */ var _pagefunctions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pagefunctions */ \"./src/modules/pagefunctions.js\");\n\r\n\r\nconst APIurl = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/';\r\nconst gameID = 'D4oo8fZXNfgmwr94xZgZ';\r\nconst scoresite = `${APIurl}games/${gameID}/scores`;\r\n\r\nconst saveScore = async () => {\r\n    const newData = (0,_pagefunctions__WEBPACK_IMPORTED_MODULE_0__.newSave)();\r\n    if(newData){\r\n        await fetch(scoresite, {\r\n         method: 'POST',\r\n         body: JSON.stringify(newData),\r\n         headers: {\r\n            'Content-type': 'application/json;',\r\n         },        \r\n        })\r\n        .then((response) => response.json())\r\n    }\r\n}\r\n\r\nconst retrieveScore = async () => {\r\n    const response = await fetch(scoresite);\r\n    return response.json();\r\n}\r\n\n\n//# sourceURL=webpack://leaderboard/./src/modules/LeaderApi.js?");
 
 /***/ }),
 
@@ -126,7 +136,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
   \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst content = document.getElementById('content');\n\nconst page = `<section class=\"column\">        \n    <div>\n        <h2>Recent Scores</h2>\n        <button type=\"button\">Refresh</button>\n        <div class=\"scores-display\"></div>\n    </div>\n    <div class=\"score-form\">\n        <h2>Add your score</h2>\n        <input type=\"text\" required placeholder=\"Your name\"/>\n        <input type=\"number\" required placeholder=\"Your score\"/>\n        <button type=\"submit\">Submit</button>\n    </div>\n</section>\n`;\nconst renderPage = () => {\n  content.insertAdjacentHTML('beforeend', page);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (renderPage);\n\n//# sourceURL=webpack://leaderboard/./src/modules/page.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst content = document.getElementById('content');\r\n\r\nconst page = `<section class=\"page-content\">        \r\n    <div>\r\n        <h2>Recent Scores</h2>\r\n        <button type=\"button\" id=\"refresher\">Refresh</button>\r\n        <div class=\"scores-display\"></div>\r\n    </div>\r\n    <div class=\"score-form\">\r\n        <h2>Add your score</h2>\r\n        <form id=\"input-area\" action=\"post\">\r\n        <input type=\"text\" required placeholder=\"Your name\"/>\r\n        <input type=\"number\" required placeholder=\"Your score\"/>\r\n        <button type=\"submit\">Submit</button>\r\n        </form>\r\n    </div>\r\n</section>\r\n`;\r\nconst renderPage = () => {\r\n  content.insertAdjacentHTML('beforeend', page);\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (renderPage);\n\n//# sourceURL=webpack://leaderboard/./src/modules/page.js?");
+
+/***/ }),
+
+/***/ "./src/modules/pagefunctions.js":
+/*!**************************************!*\
+  !*** ./src/modules/pagefunctions.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"displayScores\": () => (/* binding */ displayScores),\n/* harmony export */   \"newSave\": () => (/* binding */ newSave),\n/* harmony export */   \"scoreCard\": () => (/* binding */ scoreCard)\n/* harmony export */ });\n/* harmony import */ var _LeaderApi__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./LeaderApi */ \"./src/modules/LeaderApi.js\");\n\r\n\r\nconst user = document.querySelector('#player-id');\r\nconst score = document.querySelector('#score-input');\r\nconst scoreCard = document.querySelector('.scores-display');\r\n\r\nconst newSave = () => {\r\n    const playerData = {player: user.value, score: score.value};\r\n    return playerData;\r\n}\r\n\r\nconst displayScores = async () => {\r\n    // scoreCard.innerHTML = '';\r\n    const sought = await (0,_LeaderApi__WEBPACK_IMPORTED_MODULE_0__.retrieveScore)();\r\n    const scoresData = sought.result.sort((a, b) => a.score - b.score);\r\n    let cardData = '';\r\n    scoresData.array.forEach(entry => {\r\n        cardData += `\r\n        <div>\r\n        <span>${entry.player}</span>\r\n        <span>${entry.score}</span>\r\n        </div>\r\n        `\r\n    });\r\n    scoreCard.innerHTML = cardData;\r\n}\n\n//# sourceURL=webpack://leaderboard/./src/modules/pagefunctions.js?");
 
 /***/ })
 
