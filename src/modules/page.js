@@ -1,6 +1,6 @@
 const content = document.getElementById('content');
 
-const page = `<section class="column">        
+const page = `<section class="page-content">        
     <div>
         <h2>Recent Scores</h2>
         <button type="button" id="refresher">Refresh</button>
