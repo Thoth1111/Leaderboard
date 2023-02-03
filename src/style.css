@@ -1,6 +1,9 @@
-/* body {
-  background-color: blue;
-} */
+body {
+  background-image: url(./modules/images/pexels-lucie-liz-3165335.jpg);
+  background-size: cover;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color:#6cd9a8;
+}
 
 h1 {
   margin: 40px;
@@ -23,33 +26,47 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 40vw;
+  width: 35vw;
 }
 
 #refresher {
   width: 80px;
   height: 30px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  font-weight: bold;
+  background-color: rgba(175, 169, 163, 1);
+}
+
+#refresher:hover {
+  background-color: #6cd9a8;
 }
 
 .scores-display {
-  width: 40vw;
+  width: 35vw;
+  border-radius: 8px;
+  background-color: rgba(236, 229, 221, 0.6);
 }
 
 .rendered-scores {
   display: flex;
   justify-content: space-between;
   border: 1px solid grey;
-  padding: 10px;
+  padding: 10px 24px;
   font-size: 18px;
+  font-weight: bold;
+  color: black;
 }
 
 .rendered-scores:first-child {
   border-radius: 8px 8px 0 0;
 }
 
-/* .rendered-scores:nth-child(even) {
-  background-color: darkcyan;
-} */
+.rendered-scores:nth-child(even) {
+  background-color: rgba(175, 169, 163, 0.6);
+}
 
 .rendered-scores:last-child {
   border-radius: 0 0 8px 8px;
@@ -70,6 +87,14 @@ main {
 
 #player-id, #score-input {
   height: 40px;
+  background-color: rgba(175, 169, 163, 0.6);
+  color: black;
+}
+
+#player-id::placeholder, #score-input::placeholder {
+  color: #6cd9a8;
+  padding-left: 10px;
+  font-weight: bold;
 }
 
 .submit-Btn {
@@ -77,5 +102,14 @@ main {
   width: 100px;
   font-size: 16px;
   cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  font-weight: bold;
+  background-color: rgba(175, 169, 163, 1);
+}
+
+.submit-Btn:hover {
+  background-color: #6cd9a8;
 }
 
