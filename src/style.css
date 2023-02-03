@@ -2,6 +2,11 @@
   background-color: blue;
 } */
 
+h1 {
+  margin: 40px;
+  font-size: 40px;
+}
+
 main {
   display: flex;
   margin: 20px 40px;
@@ -17,7 +22,13 @@ main {
 .top-display {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 40vw;
+}
+
+#refresher {
+  width: 80px;
+  height: 30px;
 }
 
 .scores-display {
@@ -35,6 +46,10 @@ main {
 .rendered-scores:first-child {
   border-radius: 8px 8px 0 0;
 }
+
+/* .rendered-scores:nth-child(even) {
+  background-color: darkcyan;
+} */
 
 .rendered-scores:last-child {
   border-radius: 0 0 8px 8px;
