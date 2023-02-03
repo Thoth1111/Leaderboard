@@ -7,7 +7,7 @@ window.onload = () => {
   renderPage();
   displayScores();
   const refreshBtn = document.querySelector('#refresher');
-  const inputArea = document.querySelector('#input-area');
+  const inputArea = document.querySelector('.input-area');
 
   refreshBtn.onclick = () => {
     displayScores();
