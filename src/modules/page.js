@@ -20,4 +20,4 @@ const renderPage = () => {
   content.insertAdjacentHTML('beforeend', page);
 };
 
-// export default renderPage;
+export default renderPage;

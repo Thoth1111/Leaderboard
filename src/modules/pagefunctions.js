@@ -1,8 +1,7 @@
 import { retrieveScore } from "./LeaderApi";
-export const scoreCard = document.querySelector('.scores-display');
 
 export const displayScores = async () => {
-    // scoreCard.innerHTML = '';
+    const scoreCard = document.querySelector('.scores-display');
     const sought = await retrieveScore();
     const scoresData = sought.result.sort((a, b) => a.score - b.score);
     let cardData = '';

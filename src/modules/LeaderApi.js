@@ -1,10 +1,8 @@
 const APIurl = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/';
 const gameID = 'D4oo8fZXNfgmwr94xZgZ';
 const scoresite = `${APIurl}games/${gameID}/scores`;
-export const player = document.querySelector('#player-id');
-export const score = document.querySelector('#score-input');
 
-export const saveScore = async () => {
+export const saveScore = async (player,score) => {
     if(player.value && score.value){
         await fetch(scoresite, {
             method: 'POST',
