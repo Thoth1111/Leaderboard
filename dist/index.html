@@ -8,6 +8,21 @@
 <script defer src="main.js"></script></head>
 <body>
     <h1>Leaderboard</h1>
-    <div id="content"></div>    
+    <section class="page-content">        
+        <div>
+            <h2>Recent Scores</h2>
+            <button type="button" id="refresher">Refresh</button>
+            <div class="scores-display"></div>
+        </div>
+        <div class="score-form">
+            <h2>Add your score</h2>
+            <form id="input-area">
+                <input type="text" required placeholder="Your name"/>
+                <input type="number" required placeholder="Your score"/>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+    <!-- <div id="content"></div>     -->
 </body>
 </html>

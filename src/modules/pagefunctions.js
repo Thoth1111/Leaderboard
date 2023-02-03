@@ -1,23 +1,15 @@
 import { retrieveScore } from "./LeaderApi";
-
-const user = document.querySelector('#player-id');
-const score = document.querySelector('#score-input');
 export const scoreCard = document.querySelector('.scores-display');
-
-export const newSave = () => {
-    const playerData = {player: user.value, score: score.value};
-    return playerData;
-}
 
 export const displayScores = async () => {
     // scoreCard.innerHTML = '';
     const sought = await retrieveScore();
     const scoresData = sought.result.sort((a, b) => a.score - b.score);
     let cardData = '';
-    scoresData.array.forEach(entry => {
+    scoresData.forEach(entry => {
         cardData += `
         <div>
-        <span>${entry.player}</span>
+        <span>${entry.user}</span>
         <span>${entry.score}</span>
         </div>
         `

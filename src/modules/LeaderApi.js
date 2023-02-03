@@ -1,24 +1,27 @@
-import { newSave } from "./pagefunctions";
-
 const APIurl = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/';
 const gameID = 'D4oo8fZXNfgmwr94xZgZ';
 const scoresite = `${APIurl}games/${gameID}/scores`;
+export const player = document.querySelector('#player-id');
+export const score = document.querySelector('#score-input');
 
 export const saveScore = async () => {
-    const newData = newSave();
-    if(newData){
+    if(player.value && score.value){
         await fetch(scoresite, {
-         method: 'POST',
-         body: JSON.stringify(newData),
-         headers: {
-            'Content-type': 'application/json;',
-         },        
+            method: 'POST',
+            body: JSON.stringify({
+            user: player.value,
+            score: score.value,
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },        
         })
-        .then((response) => response.json())
     }
 }
 
 export const retrieveScore = async () => {
     const response = await fetch(scoresite);
-    return response.json();
+    const retrieved = await response.json();
+    return retrieved;
 }
+
