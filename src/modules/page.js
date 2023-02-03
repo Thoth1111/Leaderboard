@@ -11,10 +11,10 @@ const page = `
     </section>
     <section class="score-form">
         <h2>Add your score</h2>
-        <form id="input-area">
+        <form class="input-area">
             <input type="text" id="player-id" required placeholder="Your name"/>
             <input type="number" id="score-input" required placeholder="Your score"/>
-            <button type="submit">Submit</button>
+            <button type="submit" class="submit-Btn">Submit</button>
         </form>
     </section>
 </main>

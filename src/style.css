@@ -61,7 +61,21 @@ main {
   gap: 20px;
 }
 
-#input-area {
+.input-area {
   display: flex;
   flex-direction: column;
+  width: 25vw;
+  gap: 30px;
 }
+
+#player-id, #score-input {
+  height: 40px;
+}
+
+.submit-Btn {
+  padding: 10px 0;
+  width: 100px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
