@@ -7,7 +7,7 @@ const displayScores = async () => {
   let cardData = '';
   scoresData.forEach((entry) => {
     cardData += `
-        <div>
+        <div class="rendered-scores">
         <span>${entry.user}</span>
         <span>${entry.score}</span>
         </div>

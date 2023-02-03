@@ -1,12 +1,51 @@
-.column {
+/* body {
+  background-color: blue;
+} */
+
+main {
+  display: flex;
+  margin: 20px 40px;
+  justify-content: space-between;
+}
+
+.display-pane {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.top-display {
+  display: flex;
+  justify-content: space-between;
+  width: 40vw;
+}
+
+.scores-display {
+  width: 40vw;
+}
+
+.rendered-scores {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid grey;
+  padding: 10px;
+  font-size: 18px;
+}
+
+/* .column {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 20rem;
-}
+} */
 
 .score-form {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+#input-area {
+  display: flex;
+  flex-direction: column;
 }
