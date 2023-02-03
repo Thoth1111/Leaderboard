@@ -11,7 +11,7 @@ main {
 .display-pane {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 20px;
 }
 
 .top-display {
@@ -32,12 +32,13 @@ main {
   font-size: 18px;
 }
 
-/* .column {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20rem;
-} */
+.rendered-scores:first-child {
+  border-radius: 8px 8px 0 0;
+}
+
+.rendered-scores:last-child {
+  border-radius: 0 0 8px 8px;
+}
 
 .score-form {
   display: flex;
