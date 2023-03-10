@@ -61,6 +61,10 @@ main {
 }
 
 .rendered-scores:first-child {
+  display: none;
+}
+
+.rendered-scores:second-child {
   border-radius: 8px 8px 0 0;
 }
 
