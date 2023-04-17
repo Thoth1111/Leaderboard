@@ -13,6 +13,7 @@ h1 {
 main {
   display: flex;
   margin: 20px 40px;
+  width: 90%;
   justify-content: space-between;
 }
 
@@ -52,6 +53,7 @@ main {
 
 .rendered-scores {
   display: flex;
+  overflow: auto;
   justify-content: space-between;
   border: 1px solid grey;
   padding: 10px 24px;
@@ -61,10 +63,6 @@ main {
 }
 
 .rendered-scores:first-child {
-  display: none;
-}
-
-.rendered-scores:second-child {
   border-radius: 8px 8px 0 0;
 }
 
